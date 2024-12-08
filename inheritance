@@ -1,0 +1,24 @@
+# Parent class
+class Vehicle:  # Correct spelling of class name
+    def __init__(self, brand, model):  # Fixed '__init__' method name
+        self.brand = brand
+        self.model = model
+
+    def display_details(self):
+        print(f"Vehicle: {self.brand} {self.model}")
+
+
+# Child class
+class Car(Vehicle):  # Correct spelling of class name
+    def __init__(self, brand, model, seats):  # Fixed '__init__' method name
+        super().__init__(brand, model)  # Call parent class constructor correctly
+        self.seats = seats  # Initialize 'seats'
+
+    def car_details(self):
+        self.display_details()  # Call parent class method
+        print(f"Number of seats: {self.seats}")
+
+
+# Create Car object
+car = Car("Hyundai", "i20", 5)  # Pass arguments correctly
+car.car_details()
